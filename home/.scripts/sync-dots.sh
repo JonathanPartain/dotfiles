@@ -14,4 +14,10 @@ rsync -av /home/jonathan/.vimrc /home/jonathan/dotfiles/home/.vimrc
 echo "Synching bashrc file... 5/5"
 rsync -av /home/jonathan/.bashrc /home/jonathan/dotfiles/home/.bashrc
 
+echo "Pushing to git"
+cd /home/jonathan/dotfiles
+git add .
+git commit -m "Cron-push"
+git push origin master
+
 echo "Finished!"
