@@ -279,13 +279,17 @@ menu-0-0 = Terminate WM
 menu-0-0-foreground = #fba922
 menu-0-0-exec = pkill i3
 
-menu-0-1 = Reboot
+menu-0-1 = Suspend
 menu-0-1-foreground = #fba922
-menu-0-1-exec = gksudo reboot
+menu-0-1-exec = lockscreen.sh;systemctl suspend
 
-menu-0-2 = Power off
+menu-0-2 = Reboot
 menu-0-2-foreground = #fba922
-menu-0-2-exec = gksudo poweroff
+menu-0-2-exec = gksudo reboot
+
+menu-0-3 = Power off
+menu-0-3-foreground = #fba922
+menu-0-3-exec = gksudo poweroff
 
 menu-1-0 = Cancel
 menu-1-0-foreground = #fba922
