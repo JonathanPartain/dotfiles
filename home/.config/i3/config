@@ -228,5 +228,7 @@ bindsym $mod+shift+x exec /home/jonathan/.scripts/lockscreen.sh
 # Polybar
 exec_always --no-startup-id /home/jonathan/.config/polybar/launch.sh
 
+# Redshift
+exec_always --no-startup-id redshift
 # Composite manager
 exec compton -f
