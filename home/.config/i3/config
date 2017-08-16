@@ -218,7 +218,8 @@ bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
-
+# Kill bluetooth
+exec_always rfkill block bluetooth
 # Wallpaper
 exec_always feh --bg-scale /home/jonathan/Pictures/wallpaper.png
 
