@@ -128,5 +128,9 @@ alias upgrade="sudo apt update && sudo apt upgrade"
 
 alias dwarf_fortress="cd ~/dwarf_fortress/df_linux && ./df"
 
-
+mkcdir ()
+{
+    mdir -p -- "$1" &&
+    cd -P -- "$1"
+}
 

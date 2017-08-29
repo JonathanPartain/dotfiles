@@ -288,7 +288,7 @@ menu-0-0-exec = pkill i3
 
 menu-0-1 = Suspend
 menu-0-1-foreground = #fba922
-menu-0-1-exec = lockscreen.sh;systemctl suspend
+menu-0-1-exec = ~/.scripts/lockscreen.sh;systemctl suspend
 
 menu-0-2 = Reboot
 menu-0-2-foreground = #fba922
