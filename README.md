@@ -9,7 +9,7 @@ Make sure that the following is installed:
   
 Clone the directory into `~/dotfiles`
 
-Move all configuration files into a temporary directory as a security measure
+Move all configuration files into a temporary directory as a security measure. Alternatively, run `move-old-config.sh` inside `~/dotfiles/scripts/.scripts` directory
 
 Run `sync-dots.sh` inside `~/dotfiles/scripts/.scripts` directory
 
