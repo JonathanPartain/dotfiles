@@ -5,6 +5,7 @@ Make sure that the following is installed:
   * stow
   * i3
   * polybar
+  * rofi
   * vim awesome configuration (https://github.com/amix/vimrc)
   
 Clone the directory into `~/dotfiles`
