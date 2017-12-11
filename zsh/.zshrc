@@ -76,6 +76,20 @@ source $ZSH/oh-my-zsh.sh
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+    source /etc/profile.d/vte.sh
+fi
+function custom_prompt() {
+#    if [ "$color_prompt" = yes ]; then
+#      __git_ps1 '${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+#    else
+#        __git_ps1 '${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+#    fi
+    VTE_PWD_THING="$(__vte_osc7)"
+    PS1="$PS1$VTE_PWD_THING"
+}
+PROMPT_COMMANDE=`custom_prompt`
+unset color_prompt force_color_prompt
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -85,6 +99,3 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-    source /etc/profile.d/vte.sh
-fi
