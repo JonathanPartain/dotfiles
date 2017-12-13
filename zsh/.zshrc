@@ -99,3 +99,4 @@ unset color_prompt force_color_prompt
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias cointoss="bash ~/.scripts/cointoss.sh"
