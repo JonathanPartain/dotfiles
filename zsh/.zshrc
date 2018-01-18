@@ -100,3 +100,5 @@ unset color_prompt force_color_prompt
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias cointoss="bash ~/.scripts/cointoss.sh"
+
+alias compile="finame=${$1%.c}; echo $finame"
