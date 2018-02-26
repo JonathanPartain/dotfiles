@@ -6,7 +6,7 @@ SetMacro( 'AUTHOR',      'Jonathan Partain' )
 SetMacro( 'AUTHORREF',   '' )
 SetMacro( 'COMPANY',     '' )
 SetMacro( 'COPYRIGHT',   '' )
-SetMacro( 'EMAIL',       'jonathan@partain.se' )
+SetMacro( 'EMAIL',       '' )
 SetMacro( 'LICENSE',     '' )
 SetMacro( 'ORGANIZATION','' )
 
