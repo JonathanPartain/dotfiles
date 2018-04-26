@@ -101,5 +101,7 @@ unset color_prompt force_color_prompt
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias cointoss="bash ~/.scripts/cointoss.sh"
 
+alias remake="cd .. && rm -r b/ && makec"
+alias makec="mkdir b && cd b && cmake .. && make"
 alias cd..="cd .."
 alias compile="zsh ~/.scripts/compile.sh"
