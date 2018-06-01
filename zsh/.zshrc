@@ -1,7 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$PATH:~/.scripts
-export PATH=$PATH:/usr/local/texlive/2018/bin/platform
+export PATH=$PATH:/usr/local/texlive/2018/bin/x86_64-linux
 eval $(thefuck --alias f)
 
 # Path to your oh-my-zsh installation.
