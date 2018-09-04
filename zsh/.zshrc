@@ -2,6 +2,7 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$PATH:~/.scripts
 export PATH=/usr/local/texlive/2018/bin/x86_64-linux:$PATH
+export ZSH=$HOME/.oh-my-zsh
 eval $(thefuck --alias f)
 
 # Path to your oh-my-zsh installation.
