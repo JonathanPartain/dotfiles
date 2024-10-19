@@ -24,8 +24,27 @@ sudo chown -R $USER /usr/lib/node_modules/
 # install tldr
 sudo npm install -g tldr
 
+# install rustup
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# Kitty terminal bin
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+# symlink to path
+sudo ln -s ~/.local/kitty.app/bin/kitty /usr/local/bin/
+# application launcher
+cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
+# Add Icon
+sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
+sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
+
+# Set as default terminal
+sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/local/bin/kitty 50
+
+# Set keybind
+gsettings set org.gnome.settings-daemon.plugins.media-keys terminal "['<Super>Return']"
 
 # Install nvim in Documents because why not
+# 
 # install nvim from latest stable, symlink to /usr/local/bin
 NVIM_VERSION=$(git ls-remote --refs --tags git@github.com:neovim/neovim.git | cut --delimiter='/' --fields=3 | tr '-' '~' | sort --version-sort | tail --lines=1)
 wget https://github.com/neovim/neovim/releases/download/$NVIM_VERSION/nvim-linux64.tar.gz -O ~/Downloads/nvim-linux64.tar.gz
@@ -43,3 +62,4 @@ stow tmux
 stow nvim
 stow bash
 stow scripts
+# TODO: stow kitty

@@ -126,6 +126,7 @@ export M2_HOME=/usr/share/maven
 export M2=$M2_HOME/bin
 export PATH=$M2:$PATH
 export SCRIPT_DIR=/home/$USER/scripts
+export PATH=/home/$USER/.local/:$PATH
 export PATH=$SCRIPT_DIR:$PATH
 
 # venv stuff
