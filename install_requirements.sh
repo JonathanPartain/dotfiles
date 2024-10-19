@@ -52,7 +52,7 @@ tar xf ~/Downloads/nvim-linux64.tar.gz --directory=~/Documents/nvim-linux64/
 # symlink to /usr/local/bin/
 sudo ln -s ~/Documents/nvim-linux64/bin/nvim /usr/local/bin/nvim
 
-git submodule update
+git submodule update --recursive
 
 # rename stuff before stow
 mv ~/.tmux.conf ~/.tmux.old.conf
@@ -62,4 +62,4 @@ stow tmux
 stow nvim
 stow bash
 stow scripts
-# TODO: stow kitty
+stow kitty
