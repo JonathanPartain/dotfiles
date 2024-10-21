@@ -128,6 +128,7 @@ export PATH=$M2:$PATH
 export SCRIPT_DIR=/home/$USER/scripts
 export PATH=/home/$USER/.local/:$PATH
 export PATH=$SCRIPT_DIR:$PATH
+export PATH=/usr/local/bin:$PATH
 
 # venv stuff
 function cd() {
