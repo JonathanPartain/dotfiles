@@ -61,8 +61,12 @@ git submodule update --recursive
 mv ~/.tmux.conf ~/.tmux.old.conf
 mv ~/.config/nvim ~/.config/nvim.old.bak
 mv ~/.bashrc ~/.bashrc.old.bak
+mv ~/.gitconfig ~/.gitconfig.old
 stow tmux
 stow nvim
 stow bash
 stow scripts
 stow kitty
+stow git
+# reload tmux
+tmux source ~/.tmux.conf
