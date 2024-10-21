@@ -167,3 +167,6 @@ eval "$(fixit init bash)"
 alias f=fix
 eval "$(zoxide init --cmd cd bash)"
 
+# Cheat.sh autocomplete
+. ~/.bash.d/cht.sh
+
