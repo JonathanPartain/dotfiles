@@ -24,9 +24,6 @@ sudo chown -R $USER /usr/lib/node_modules/
 
 # cheat.sh
 curl -s https://cht.sh/:cht.sh | sudo tee /usr/local/bin/cht.sh && sudo chmod +x /usr/local/bin/cht.sh
-# auto completion
-mkdir -p ~/.bash.d/
-curl https://cheat.sh/:bash_completion > ~/.bash.d/cht.sh
 . ~/.bash.d/cht.sh # and add . ~/.bash.d/cht.sh to ~/.bashrc
 #
 # install rustup

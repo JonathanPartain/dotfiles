@@ -169,4 +169,3 @@ eval "$(zoxide init --cmd cd bash)"
 
 # Cheat.sh autocomplete
 . ~/.bash.d/cht.sh
-
