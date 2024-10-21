@@ -16,6 +16,7 @@ sudo apt install fixit
 # install node and npm
 curl -fsSL https://deb.nodesource.com/setup_23.x -o nodesource_setup.sh
 sudo -E bash nodesource_setup.sh
+rm nodesource_setup.sh
 sudo apt install -y nodejs
 # Chown npm and node modules
 sudo chown -R $USER ~/.npm
@@ -48,15 +49,17 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys terminal "['<Super>Re
 # install nvim from latest stable, symlink to /usr/local/bin
 NVIM_VERSION=$(git ls-remote --refs --tags git@github.com:neovim/neovim.git | cut --delimiter='/' --fields=3 | tr '-' '~' | sort --version-sort | tail --lines=1)
 wget https://github.com/neovim/neovim/releases/download/$NVIM_VERSION/nvim-linux64.tar.gz -O ~/Downloads/nvim-linux64.tar.gz
-tar xf ~/Downloads/nvim-linux64.tar.gz --directory=~/Documents/nvim-linux64/
+mkdir -p ~/Documents/nvim-linux64
+tar xf ~/Downloads/nvim-linux64.tar.gz -C ~/Documents/nvim-linux64 --strip-components=1
 # symlink to /usr/local/bin/
 sudo ln -s ~/Documents/nvim-linux64/bin/nvim /usr/local/bin/nvim
 
+git submodule update --init
 git submodule update --recursive
 
 # rename stuff before stow
 mv ~/.tmux.conf ~/.tmux.old.conf
-mv ~/.config/nvim/ ~/.config/nvim.old.bak
+mv ~/.config/nvim ~/.config/nvim.old.bak
 mv ~/.bashrc ~/.bashrc.old.bak
 stow tmux
 stow nvim
