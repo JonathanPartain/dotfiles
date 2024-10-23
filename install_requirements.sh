@@ -54,6 +54,8 @@ mkdir -p ~/Documents/nvim-linux64
 tar xf ~/Downloads/nvim-linux64.tar.gz -C ~/Documents/nvim-linux64 --strip-components=1
 # symlink to /usr/local/bin/
 sudo ln -s ~/Documents/nvim-linux64/bin/nvim /usr/local/bin/nvim
+# Install deno for peek.nvim
+curl -fsSL https://deno.land/install.sh | sh
 
 git submodule update --init
 git submodule update --recursive
@@ -63,6 +65,7 @@ mv ~/.tmux.conf ~/.tmux.old.conf
 mv ~/.config/nvim ~/.config/nvim.old.bak
 mv ~/.bashrc ~/.bashrc.old.bak
 mv ~/.gitconfig ~/.gitconfig.old
+# Yeah I could loop or smth, but nah
 stow tmux
 stow nvim
 stow bash

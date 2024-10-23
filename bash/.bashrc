@@ -169,3 +169,6 @@ eval "$(zoxide init --cmd cd bash)"
 
 # Cheat.sh autocomplete
 . ~/.bash.d/cht.sh
+
+# deno install
+. "/home/jonathan/.deno/env"
