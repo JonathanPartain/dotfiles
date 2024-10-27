@@ -172,3 +172,8 @@ eval "$(zoxide init --cmd cd bash)"
 
 # deno install
 . "/home/jonathan/.deno/env"
+
+# fzf stuff
+source /usr/share/doc/fzf/examples/key-bindings.bash
+
+bind '"\C-f": "tmux-sessionizer\n"'

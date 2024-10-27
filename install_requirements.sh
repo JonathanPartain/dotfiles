@@ -7,6 +7,7 @@ sudo apt install -y stow # needed for dotfile management
 sudo apt install -y tmux
 sudo apt install -y ripgrep
 sudo apt install -y wget tar curl
+sudo apt install -y fzf
 # clipboard stuff for x11 and wayland
 sudo apt install xclip wl-clipboard
 # From fixit github
