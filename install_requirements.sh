@@ -7,7 +7,10 @@ sudo apt install -y stow # needed for dotfile management
 sudo apt install -y tmux
 sudo apt install -y ripgrep
 sudo apt install -y wget tar curl
-sudo apt install -y fzf
+sudo apt install -y fzf feh picom i3lock xss-lock blueman
+sudo apt install -y lxappearance xbacklight
+sudo apt install -y flameshot
+sudo apt install -y autorandr
 # clipboard stuff for x11 and wayland
 sudo apt install xclip wl-clipboard
 # From fixit github
@@ -73,5 +76,7 @@ stow bash
 stow scripts
 stow kitty
 stow git
+stow picom
+stow i3
 # reload tmux
 tmux source ~/.tmux.conf

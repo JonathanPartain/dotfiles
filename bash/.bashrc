@@ -177,3 +177,4 @@ eval "$(zoxide init --cmd cd bash)"
 source /usr/share/doc/fzf/examples/key-bindings.bash
 
 bind '"\C-f": "tmux-sessionizer\n"'
+export GTK_THEME=Adwaita-dark
