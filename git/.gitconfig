@@ -1,6 +1,8 @@
 [user]
     email = jonathan.partain@protonmail.com
     name = JonathanPartain
+[push]
+    autoSetupRemote = true
 
 [alias]
     s = status

@@ -28,6 +28,7 @@ for_window [class="^.*"] client.focused          #77dd77 #285577 #ffffff #2e9ef4
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [title="Friends List"] floating enable
+# TODO: Set pritunl to floating
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -148,6 +149,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 assign [class="kitty"] $term
 assign [class="firefox"] $web
 assign [class="vesktop"] $soc
+assign [class="Slack"] $soc
 assign [class="steam|Spotify"] $media
 
 exec --no-startup-id i3-msg exec i3-sensible-terminal

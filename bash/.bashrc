@@ -117,6 +117,8 @@ if ! shopt -oq posix; then
 fi
 
 alias vim='nvim'
+export EDITOR="/usr/local/bin/nvim"
+export VISUAL="/usr/local/bin/nvim"
 
 if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
   tmux || tmux >/dev/null 2>&1
@@ -149,9 +151,8 @@ function cd() {
     fi
   fi
 }
-mkcd ()
-{
-    mkdir -p -- "$1" &&
+mkcd() {
+  mkdir -p -- "$1" &&
     cd -P -- "$1"
 }
 alias cd..='cd ..'
