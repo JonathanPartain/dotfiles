@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+pid=$(pidof deej-release)
+echo "$pid"
+if [ -z ${pid} ]; then
+    cd ~/Documents/deej/ && ~/Documents/deej/deej-release &
+fi

@@ -11,6 +11,7 @@ sudo apt install -y fzf feh picom i3lock xss-lock blueman
 sudo apt install -y lxappearance xbacklight
 sudo apt install -y flameshot
 sudo apt install -y autorandr arandr
+sudo apt install -y playerctl
 # clipboard stuff for x11 and wayland
 sudo apt install xclip wl-clipboard
 
