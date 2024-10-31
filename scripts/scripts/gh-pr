@@ -14,6 +14,6 @@ fi
 
 url=$(gh pr create --fill-verbose -B $branches)
 echo "$url"
-xdg-open $url
+xdg-open $url >/dev/null
 
 read -rep "test" test
