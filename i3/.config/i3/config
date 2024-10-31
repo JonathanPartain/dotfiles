@@ -22,7 +22,7 @@ font pango:monospace 15px
 # Thanks Childz
 for_window [class="^.*"] border pixel 2
                           # class                 border  backgr. text    indicator child_border
-for_window [class="^.*"] client.focused          #77dd77 #285577 #ffffff #2e9ef4   #285577
+#for_window [class="^.*"] client.focused #77dd77 #285577 #ffffff #2e9ef4   #285577
 
 # floating pop up automatically
 for_window [window_role="pop-up"] floating enable
@@ -31,8 +31,8 @@ for_window [title="Friends List"] floating enable
 # TODO: Set pritunl to floating
 for_window [class="pritunl"] floating enable
 
-bindsym $mod+Shift+minus move scratchpad
-bindsym $mod+minus scratchpad show
+
+
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
@@ -296,18 +296,20 @@ exec_always --no-startup-id xset r rate 200 20
 # i3lock
 exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -i "~/Pictures/wallpaper.png"
 # Mod Alt L
-bindsym $mod+Mod1+l exec --no-startup-id systemctl suspend
+#bindsym $mod+Mod1+l exec --no-startup-id systemctl suspend
 
 # xss-lock daemon
 # Sleep after 5 min
 #exec_always --no-startup-id xset +dpms dpms 0 300 300
 exec_always --no-startup-id xss-lock --transfer-sleep-lock -- ~/scripts/lock.sh
 
-bindsym $mod+x mode "lock"
+bindsym $mod+Mod1+l mode "lock"
 
 mode "lock" {
         bindsym l exec i3lock --ignore-empty-password --tiling --image='/home/jonathan/Pictures/wallpaper.png' 2>/dev/null, mode "default"
         bindsym s exec --no-startup-id sleep 1 && xset dpms force suspend , mode "default"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
 }
 
 # Autostart stuff
