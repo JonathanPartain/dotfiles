@@ -1,0 +1,25 @@
+#!/usr/bin/bash
+# run script with exported profile
+# expect d or p, for dev and prod
+d="dev-admin"
+p="prod-admin"
+
+while [[ $# -gt 0 ]]; do
+    case $1 in
+
+    p)
+        export AWS_PROFILE="$p"
+        echo "exported $p"
+        shift
+        ;;
+    d)
+        export AWS_PROFILE="$d"
+        echo "exported $d"
+        shift
+        ;;
+    *)
+        echo "Not a valid arg"
+        shift
+        ;;
+    esac
+done
