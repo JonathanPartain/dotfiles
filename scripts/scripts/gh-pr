@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# get remote branches
+branches=$({
+    git branch -r
+    echo "[Cancel]"
+} | sed 's/^[[:space:]]*//' | sed 's/origin\///' | fzf)
+
+if [[ -z $branches || $branches == "[Cancel]" ]]; then
+    exit 0
+fi
+
+#read -rep "Select branch:" branch_base
+
+url=$(gh pr create --fill-verbose -B $branches)
+echo "$url"
+xdg-open $url
+
+read -rep "test" test
