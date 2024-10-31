@@ -292,7 +292,18 @@ exec_always --no-startup-id xset r rate 200 20
 # i3lock
 exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -i "~/Pictures/wallpaper.png"
 # Mod Alt L
-bindsym $mod+Mod1+l exec --no-startup-id systemctl sleep
+bindsym $mod+Mod1+l exec --no-startup-id systemctl suspend
 
+# xss-lock daemon
+# Sleep after 5 min
+#exec_always --no-startup-id xset +dpms dpms 0 300 300
+exec_always --no-startup-id xss-lock --transfer-sleep-lock -- ~/scripts/lock.sh
+
+bindsym $mod+x mode "lock"
+
+mode "lock" {
+        bindsym l exec i3lock --ignore-empty-password --tiling --image='/home/jonathan/Pictures/wallpaper.png' 2>/dev/null, mode "default"
+        bindsym s exec --no-startup-id sleep 1 && xset dpms force suspend , mode "default"
+}
 
 # Autostart stuff
