@@ -297,9 +297,6 @@ exec_always picom -b
 # lower delay
 exec_always --no-startup-id xset r rate 200 20
 # i3lock
-exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -i "~/Pictures/wallpaper.png"
-# Mod Alt L
-#bindsym $mod+Mod1+l exec --no-startup-id systemctl suspend
 
 # xss-lock daemon
 # Sleep after 5 min
@@ -308,6 +305,7 @@ exec_always --no-startup-id xss-lock --transfer-sleep-lock -- ~/scripts/lock.sh
 
 set $mode_lock LockOpts: [l]ock [s]suspend
 
+# Mod Alt L
 bindsym $mod+Mod1+l mode "$mode_lock"
 
 mode "$mode_lock" {

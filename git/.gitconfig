@@ -6,6 +6,7 @@
 
 [alias]
     s = status
+    d = diff
     co = checkout
     cob = checkout -b
     del = branch -D
