@@ -7,7 +7,7 @@ sudo apt install -y stow # needed for dotfile management
 sudo apt install -y tmux
 sudo apt install -y ripgrep
 sudo apt install -y wget tar curl
-sudo apt install -y i3 fzf feh picom i3lock xss-lock blueman
+sudo apt install -y i3 fzf feh picom i3lock xss-lock blueman rofi
 sudo apt install -y lxappearance xbacklight
 sudo apt install -y flameshot
 sudo apt install -y autorandr arandr
