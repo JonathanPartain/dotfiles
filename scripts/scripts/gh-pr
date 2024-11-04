@@ -10,10 +10,21 @@ if [[ -z $branches || $branches == "[Cancel]" ]]; then
     exit 0
 fi
 
-#read -rep "Select branch:" branch_base
+output=$(gh pr create --fill --base "$branches" 2>&1)
 
-url=$(gh pr create --fill-verbose -B $branches)
-echo "$url"
-xdg-open $url >/dev/null
+# Check if the output contains a message about an existing PR
+if echo "$output" | grep -q "already exists:"; then
+    # Extract the existing PR URL
+    url=$(echo "$output" | grep -o 'https://github.com[^ ]*')
+else
+    # Extract the new PR URL from the standard output
+    url=$(echo "$output" | grep -o 'https://github.com[^ ]*')
+fi
 
-read -rep "test" test
+# Open the URL if one was found
+if [ -n "$url" ]; then
+    echo "$url"
+    xdg-open "$url" >/dev/null 2>&1 &
+else
+    echo "No URL found. Please check the output for errors."
+fi
