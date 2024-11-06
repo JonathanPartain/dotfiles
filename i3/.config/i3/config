@@ -317,3 +317,6 @@ mode "$mode_lock" {
 }
 
 # Autostart stuff
+# xinput laptop stuff
+exec xinput set-prop "SYNA8018:00 06CB:CE67 Touchpad" "libinput Tapping Enabled" 1
+exec xinput set-prop "SYNA8018:00 06CB:CE67 Touchpad" "libinput Natural Scrolling Enabled" 1
