@@ -12,14 +12,7 @@ fi
 
 output=$(gh pr create --fill --base "$branches" 2>&1)
 
-# Check if the output contains a message about an existing PR
-if echo "$output" | grep -q "already exists:"; then
-    # Extract the existing PR URL
-    url=$(echo "$output" | grep -o 'https://github.com[^ ]*')
-else
-    # Extract the new PR URL from the standard output
-    url=$(echo "$output" | grep -o 'https://github.com[^ ]*')
-fi
+url=$(echo "$output" | grep -o 'https://github.com[^ ]*')
 
 # Open the URL if one was found
 if [ -n "$url" ]; then
