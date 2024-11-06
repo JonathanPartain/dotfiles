@@ -17,7 +17,7 @@ url=$(echo "$output" | grep -o 'https://github.com[^ ]*')
 # Open the URL if one was found
 if [ -n "$url" ]; then
     echo "$url"
-    xdg-open "$url" >/dev/null 2>&1 &
+    xdg-open "$url" >/dev/null
 else
     echo "No URL found. Please check the output for errors."
 fi
