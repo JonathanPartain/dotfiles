@@ -301,7 +301,7 @@ exec_always --no-startup-id xset r rate 200 20
 
 # xss-lock daemon
 # Sleep after 5 min
-#exec_always --no-startup-id xset +dpms dpms 0 300 300
+exec_always --no-startup-id xset +dpms dpms 0 3600 3600
 exec_always --no-startup-id xss-lock --transfer-sleep-lock -- ~/scripts/lock.sh
 
 set $mode_lock LockOpts: [l]ock [s]suspend
