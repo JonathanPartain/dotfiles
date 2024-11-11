@@ -16,3 +16,5 @@
 [credential]
     helper = !aws --profile secrets-access codecommit credential-helper $@
     UseHttpPath = true
+[pull]
+	rebase = true
