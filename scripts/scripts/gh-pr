@@ -10,14 +10,6 @@ if [[ -z $branches || $branches == "[Cancel]" ]]; then
     exit 0
 fi
 
-output=$(gh pr create --fill --base "$branches" 2>&1)
+gh pr create --fill --base "$branches" 2>&1
 
-url=$(echo "$output" | grep -o 'https://github.com[^ ]*')
-
-# Open the URL if one was found
-if [ -n "$url" ]; then
-    echo "$url"
-    xdg-open "$url" >/dev/null
-else
-    echo "No URL found. Please check the output for errors."
-fi
+gh pr view --web
