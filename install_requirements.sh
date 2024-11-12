@@ -13,7 +13,8 @@ sudo apt install -y flameshot
 sudo apt install -y autorandr arandr
 sudo apt install -y playerctl pasystray
 # clipboard stuff for x11 and wayland
-sudo apt install xclip wl-clipboard
+sudo apt install -y xclip wl-clipboard
+sudo apt install -y polybar
 
 # From fixit github
 # Install fixit if not exists
