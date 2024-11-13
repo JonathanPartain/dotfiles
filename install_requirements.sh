@@ -2,19 +2,10 @@
 
 #sudo apt update
 #
-sudo apt install -y git
-sudo apt install -y stow # needed for dotfile management
-sudo apt install -y tmux
-sudo apt install -y ripgrep
-sudo apt install -y wget tar curl
-sudo apt install -y i3 fzf feh picom i3lock xss-lock blueman rofi
-sudo apt install -y lxappearance xbacklight
-sudo apt install -y flameshot
-sudo apt install -y autorandr arandr
-sudo apt install -y playerctl pasystray
+sudo apt install -y git stow tmux ripgrep wget tar curl i3 fzf feh picom i3lock xss-lock blueman rofi
+sudo apt install -y lxappearance xbacklight flameshot autorandr arandr playerctl pasystray
 # clipboard stuff for x11 and wayland
-sudo apt install -y xclip wl-clipboard
-sudo apt install -y polybar
+sudo apt install -y xclip wl-clipboard polybar
 
 # From fixit github
 # Install fixit if not exists
@@ -116,12 +107,13 @@ backup_if_not_symlink() {
 
 backup_if_not_symlink ~/.tmux.conf
 backup_if_not_symlink ~/.config/nvim
+backup_if_not_symlink ~/.config/polybar
 backup_if_not_symlink ~/.bashrc
 backup_if_not_symlink ~/.gitconfig
 backup_if_not_symlink ~/.bash.d
 
 # Stow all
-for dir in tmux nvim bash scripts kitty git picom i3; do
+for dir in tmux nvim bash scripts kitty git picom i3 polybar; do
     stow "$dir"
 done
 # reload tmux
