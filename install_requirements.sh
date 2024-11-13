@@ -4,8 +4,7 @@
 #
 sudo apt install -y git stow tmux ripgrep wget tar curl i3 fzf feh picom i3lock xss-lock blueman rofi
 sudo apt install -y lxappearance xbacklight flameshot autorandr arandr playerctl pasystray
-# clipboard stuff for x11 and wayland
-sudo apt install -y xclip wl-clipboard polybar
+sudo apt install -y make gcc unzip git xclip curl wl-clipboard polybar
 
 # From fixit github
 # Install fixit if not exists
