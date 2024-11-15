@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+echo "1"
+download_location="https://discord.com/api/download?platform=linux&format=deb"
+deb_loc=$HOME/Downloads/discord-debs
+# ensure a download location for discord exists
+echo "2"
+mkdir -p $deb_loc
+
+echo "3"
+# get the latest available discord version from internet
+ver_full=$(curl -s $download_location | head -n 4)
+echo "4"
+filename=$(echo $ver_full | grep -Eo "discord-([0-9]+.){3}deb" | sort -u )
+
+echo "5"
+if [ ! -f $deb_loc/$filename ]; then
+    echo "6"
+    wget $download_location -O $deb_loc/$filename
+    echo "7"
+    pkexec sudo dpkg -i $deb_loc/$filename
+fi
+
+
+echo "8"
+# launch discord
+discord &

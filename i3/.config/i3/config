@@ -158,7 +158,7 @@ assign [class="steam|Spotify"] $media
 
 exec --no-startup-id i3-msg 'workspace $term; exec i3-sensible-terminal'
 exec --no-startup-id i3-msg exec firefox
-exec --no-startup-id i3-msg exec discord
+exec --no-startup-id i3-msg exec discord_updater
 exec --no-startup-id i3-msg exec steam
 exec --no-startup-id i3-msg exec spotify 
 
@@ -301,7 +301,6 @@ exec_always --no-startup-id xset r rate 200 20
 # i3lock
 
 # xss-lock daemon
-# Sleep after 5 min
 exec_always --no-startup-id xset +dpms dpms 0 3600 3600
 exec_always --no-startup-id xss-lock --transfer-sleep-lock -- ~/scripts/lock.sh
 
