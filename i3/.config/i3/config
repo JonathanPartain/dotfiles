@@ -158,7 +158,7 @@ assign [class="steam|Spotify"] $media
 
 exec --no-startup-id i3-msg 'workspace $term; exec i3-sensible-terminal'
 exec --no-startup-id i3-msg exec firefox
-exec --no-startup-id i3-msg exec discord_updater
+exec --no-startup-id $HOME/scripts/discord_updater
 exec --no-startup-id i3-msg exec steam
 exec --no-startup-id i3-msg exec spotify 
 
