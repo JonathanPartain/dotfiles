@@ -131,6 +131,7 @@ export SCRIPT_DIR=/home/$USER/scripts
 export PATH=/home/$USER/.local/:$PATH
 export PATH=$SCRIPT_DIR:$PATH
 export PATH=/usr/local/bin:$PATH
+export PATH=$HOME/Applications/:$PATH
 
 # venv stuff
 function cd() {
@@ -183,3 +184,4 @@ export GTK_THEME=Adwaita-dark
 # export script alias
 alias ed=". e d" # I will never use this editor, so whatever
 alias ep=". e p"
+source <(kubectl completion bash)
