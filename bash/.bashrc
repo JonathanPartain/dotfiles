@@ -184,3 +184,5 @@ export GTK_THEME=Adwaita-dark
 # export script alias
 alias ed=". e d" # I will never use this editor, so whatever
 alias ep=". e p"
+
+[ -f "/home/jonathan/.ghcup/env" ] && . "/home/jonathan/.ghcup/env" # ghcup-env

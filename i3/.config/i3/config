@@ -120,11 +120,11 @@ set $rnd "3: rnd"
 set $soc "4: social"
 set $media "5: media"
 
-workspace $term output secondary
-workspace $web output primary 
-workspace $rnd output secondary
-workspace $soc output primary
-workspace $media output primary 
+workspace $term output primary 
+workspace $web output secondary 
+workspace $rnd output primary
+workspace $soc output secondary
+workspace $media output secondary
 workspace 10 output primary 
 
 # # switch to workspace
