@@ -4,6 +4,8 @@ download_location="https://discord.com/api/download?platform=linux&format=deb"
 deb_loc=$HOME/Downloads/discord-debs
 # ensure a download location for discord exists
 mkdir -p $deb_loc
+# clear dir
+rm $deb_loc/*
 
 # get the latest available discord version from internet
 ver_full=$(curl -s $download_location | head -n 4)
@@ -11,9 +13,6 @@ filename=$(echo $ver_full | grep -Eo "discord-([0-9]+.){3}deb" | sort -u )
 
 if [ ! -f $deb_loc/$filename ]; then
     wget $download_location -O $deb_loc/$filename
-    pkexec sudo dpkg -i $deb_loc/$filename
+    sudo dpkg -i $deb_loc/$filename
 fi
 
-
-# launch discord
-discord &

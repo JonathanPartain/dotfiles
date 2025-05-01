@@ -4,7 +4,6 @@
 # .desktop location
 desktop_location="$HOME/.local/share/applications"
 command=$1
-command_path=$(which $1)
 
 echo "This is what is going to be created:"
 create_file="touch $desktop_location/$command.desktop"
@@ -12,7 +11,7 @@ header="echo [Desktop Entry] > $desktop_location/$command.desktop"
 type="echo Type=Application >> $desktop_location/$command.desktop"
 name="echo Name=$command >> $desktop_location/$command.desktop"
 term="echo Terminal=false >> $desktop_location/$command.desktop"
-exec="echo Exec=$command_path >> $desktop_location/$command.desktop"
+exec="echo Exec=$(pwd)/$command >> $desktop_location/$command.desktop"
 # Create file
 echo $create_file
 echo $header
@@ -29,12 +28,12 @@ fi
 
 if [[ "$ans" == "y" || "$ans" == Y ]]; then
     echo "ok"
-    $create_file
-    $header
-    $type
-    $name
-    $term
-    $exec
+    touch $desktop_location/$command.desktop
+    echo [Desktop Entry] > $desktop_location/$command.desktop
+    echo Type=Application >> $desktop_location/$command.desktop
+    echo Name=$command >> $desktop_location/$command.desktop
+    echo Terminal=false >> $desktop_location/$command.desktop
+    echo Exec=$(pwd)/$command >> $desktop_location/$command.desktop
 else
     exit 0
 fi

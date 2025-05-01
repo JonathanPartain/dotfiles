@@ -152,7 +152,7 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 assign [class="firefox"] $web
-assign [class="vesktop"] $soc
+assign [class="discord"] $soc
 assign [class="Slack"] $soc
 assign [class="steam|Spotify"] $media
 
