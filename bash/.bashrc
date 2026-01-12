@@ -1,7 +1,6 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
-
 # If not running interactively, don't do anything
 case $- in
 *i*) ;;
@@ -56,8 +55,11 @@ if [ -n "$force_color_prompt" ]; then
   fi
 fi
 
+
+source /usr/share/git/completion/git-prompt.sh
 if [ "$color_prompt" = yes ]; then
   PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\e[91m\]$(__git_ps1)\[\e[00m\] \$ '
+  
 else
   PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -117,8 +119,8 @@ if ! shopt -oq posix; then
 fi
 
 alias vim='nvim'
-export EDITOR="/usr/local/bin/nvim"
-export VISUAL="/usr/local/bin/nvim"
+export EDITOR="/usr/bin/nvim"
+export VISUAL="/usr/bin/nvim"
 
 if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
   tmux || tmux >/dev/null 2>&1
@@ -129,6 +131,7 @@ export M2=$M2_HOME/bin
 export PATH=$M2:$PATH
 export SCRIPT_DIR=/home/$USER/scripts
 export PATH=/home/$USER/.local/:$PATH
+export PATH=/home/$USER/.local/bin:$PATH
 export PATH=$SCRIPT_DIR:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/Applications/:$PATH
@@ -165,9 +168,9 @@ alias grep='grep --color --exclude-dir=".venv/"'
 alias gs='git status'
 alias gl='git log'
 
-eval "$(fixit init bash)"
-alias f=fix
-eval "$(zoxide init --cmd cd bash)"
+#eval "$(fixit init bash)"
+#alias f=fix
+#eval "$(zoxide init --cmd cd bash)"
 
 # Cheat.sh autocomplete
 . ~/.bash.d/cht.sh
@@ -176,7 +179,7 @@ eval "$(zoxide init --cmd cd bash)"
 . "/home/jonathan/.deno/env"
 
 # fzf stuff
-source /usr/share/doc/fzf/examples/key-bindings.bash
+#source /usr/share/doc/fzf/examples/key-bindings.bash
 
 bind '"\C-f": "tmux-sessionizer\n"'
 export GTK_THEME=Adwaita-dark
@@ -186,3 +189,11 @@ alias ed=". e d" # I will never use this editor, so whatever
 alias ep=". e p"
 
 [ -f "/home/jonathan/.ghcup/env" ] && . "/home/jonathan/.ghcup/env" # ghcup-env
+
+# pnpm
+export PNPM_HOME="/home/jonathan/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

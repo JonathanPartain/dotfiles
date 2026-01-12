@@ -3,5 +3,5 @@
 pid=$(pidof deej-release)
 echo "$pid"
 if [ -z ${pid} ]; then
-    cd ~/Documents/deej/ && ~/Documents/deej/deej-release &
+    cd ~/dev/deej/ && ~/dev/deej/deej-release &
 fi
